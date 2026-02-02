@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main() {
+    int N;
+    scanf("%d", &N);  
+    int max_streak = 0;
+    int current_streak = 0;
+    int i = 0;
+    int status;
+    while(i < N) {
+        scanf("%d", &status);  
+        if(status == 0) {  
+            current_streak++;
+            if(current_streak > max_streak) {
+                max_streak = current_streak;
+            }
+        } else {  // Working day
+            current_streak = 0;
+        }
+
+        i++;
+    }
+    printf("Longest Failure Streak: %d\n", max_streak);
+    return 0;
+}
