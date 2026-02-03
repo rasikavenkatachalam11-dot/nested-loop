@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main() {
+    int maxCapacity, n;
+    int arrivals;
+    int treated = 0;
+    int rejected = 0;
+    int i = 0;
+    scanf("%d", &maxCapacity);
+    scanf("%d", &n);
+    while (i < n) {
+        scanf("%d", &arrivals);
+        if (treated + arrivals <= maxCapacity) {
+            treated += arrivals;
+        } else {
+            rejected += (treated + arrivals - maxCapacity);
+            treated = maxCapacity;
+        }
+        i++;
+    }
+    printf("Treated Patients: %d\n", treated);
+    printf("Rejected Patients: %d\n", rejected);
+    return 0;
+}
