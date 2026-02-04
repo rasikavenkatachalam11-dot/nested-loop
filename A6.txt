@@ -1,0 +1,28 @@
+#include <stdio.h>
+int main() {
+    int N;
+    scanf("%d", &N);
+    int ids[N];
+    int i = 0;
+    while (i < N) {
+        scanf("%d", &ids[i]);
+        i++;
+    }
+    i = 0;
+    while (i < N) {
+        int j = 0;
+        int found = 0;
+        while (j < i) {
+            if (ids[j] == ids[i]) {
+                found = 1;
+                break;
+            }
+            j++;
+        }
+        if (found == 0) {
+            printf("%d ", ids[i]);
+        }
+        i++;
+    }
+    return 0;
+}
