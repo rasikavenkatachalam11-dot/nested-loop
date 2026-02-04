@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main() {
+    int N, i, day;
+    int evenCount = 0;
+    int oddCount = 0;
+    scanf("%d", &N);
+    for (i = 0; i < N; i++) {
+        scanf("%d", &day);
+        if (day % 2 == 0)
+            evenCount++;
+        else
+            oddCount++;
+    }
+    printf("Even:%d Odd:%d", evenCount, oddCount);
+
+    return 0;
+}
